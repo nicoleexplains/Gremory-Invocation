@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gremory - The 56th Spirit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-red: #ff3333;
+        --deep-red: #8a0303;
+        --dark-bg: #050505;
+        --panel-bg: rgba(10, 0, 0, 0.85);
+        --text-main: #e0e0e0;
+        --border-color: #441111;
+        --glow: 0 0 10px rgba(255, 50, 50, 0.3);
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--dark-bg);
+        color: var(--text-main);
+        font-family: 'Inter', sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      #root {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 2; /* Content sits above the background */
+      }
+      
+      /* Background Sigil Layer */
+      .sigil-bg {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vmin; /* Responsive size */
+        height: 80vmin;
+        /* Base64 encoded SVG for reliability. Color is #cc0000 (Red) */
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MDAgNTAwJz48ZyBmaWxsPSdub25lJyBzdHJva2U9JyNjYzAwMDAnIHN0cm9rZS13aWR0aD0nOCc+PHBhdGggZD0nTTE1MCwxNTAgTDE3MCwxODAgTDIxMCwxNTAgTDI1MCwxODAgTDI5MCwxNTAgTDMxMCwxODAgTDM1MCwxNTAnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnIC8+PGxpbmUgeDE9JzI1MCcgeTE9JzE4MCcgeDI9JzI1MCcgeTI9JzQwMCcgLz48bGluZSB4MT0nMTUwJyB5MT0nMTgwJyB4Mj0nMzUwJyB5Mj0nMTgwJyAvPjxwYXRoIGQ9J00xNTAsMTgwIFExMzAsMjIwIDE3MCwyMjAgUTIwMCwyMjAgMTgwLDI2MCBRMTUwLDMwMCAyMDAsMzIwJyAvPjxwYXRoIGQ9J00zNTAsMTgwIFEzNzAsMjIwIDMzMCwyMjAgUTMwMCwyMjAgMzIwLDI2MCBRMzUwLDMwMCAzMDAsMzIwJyAvPjxjaXJjbGUgY3g9JzI1MCcgY3k9JzQxNScgcj0nMTAnIC8+PGNpcmNsZSBjeD0nMjAwJyBjeT0nMzMwJyByPSc4JyAvPjxjaXJjbGUgY3g9JzMwMCcgY3k9JzMzMCcgcj0nOCcgLz48L2c+PC9zdmc+");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0.15; /* Subtle but visible */
+        z-index: 1;
+        pointer-events: none;
+        filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.4));
+      }
+
+      h1, h2, h3, h4, button {
+        font-family: 'Cinzel', serif;
+      }
+      
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #500; 
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-red); 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.32.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div class="sigil-bg"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
